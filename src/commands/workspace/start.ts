@@ -33,6 +33,8 @@ export default class WorkspaceStart extends Command {
   async run() {
     const {args, flags} = this.parse(WorkspaceStart)
 
+    this.workspace.branch
+
     const name = flags.name || 'world'
     this.log(`hello ${name} from /Users/andrea.nigro/VisualStudioCodeProjects/aral-vps-test/src/commands/workspace/start.ts`)
     if (args.file && flags.force) {
