@@ -16,49 +16,28 @@ aral-vps-test
 <!-- usage -->
 ```sh-session
 $ npm install -g aral-vps-test
-$ aral COMMAND
+$ aral-vps-test COMMAND
 running command...
-$ aral (-v|--version|version)
+$ aral-vps-test (-v|--version|version)
 aral-vps-test/0.0.0 darwin-x64 node-v8.11.4
-$ aral --help [COMMAND]
+$ aral-vps-test --help [COMMAND]
 USAGE
-  $ aral COMMAND
+  $ aral-vps-test COMMAND
 ...
 ```
 <!-- usagestop -->
 # Commands
 <!-- commands -->
-* [`aral hello [FILE]`](#aral-hello-file)
-* [`aral help [COMMAND]`](#aral-help-command)
-* [`aral workspace:start [FILE]`](#aral-workspacestart-file)
+* [`aral-vps-test help [COMMAND]`](#aral-vps-test-help-command)
+* [`aral-vps-test workspace:start [REPOSITORY] [BRANCH] [PROVIDER]`](#aral-vps-test-workspacestart-repository-branch-provider)
 
-## `aral hello [FILE]`
+## `aral-vps-test help [COMMAND]`
 
-describe the command here
-
-```
-USAGE
-  $ aral hello [FILE]
-
-OPTIONS
-  -f, --force
-  -h, --help       show CLI help
-  -n, --name=name  name to print
-
-EXAMPLE
-  $ aral hello
-  hello world from ./src/hello.ts!
-```
-
-_See code: [src/commands/hello.ts](https://github.com/11arn11/aral-vps-test/blob/v0.0.0/src/commands/hello.ts)_
-
-## `aral help [COMMAND]`
-
-display help for aral
+display help for aral-vps-test
 
 ```
 USAGE
-  $ aral help [COMMAND]
+  $ aral-vps-test help [COMMAND]
 
 ARGUMENTS
   COMMAND  command to show help for
@@ -69,18 +48,13 @@ OPTIONS
 
 _See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v2.1.6/src/commands/help.ts)_
 
-## `aral workspace:start [FILE]`
+## `aral-vps-test workspace:start [REPOSITORY] [BRANCH] [PROVIDER]`
 
 describe the command here
 
 ```
 USAGE
-  $ aral workspace:start [FILE]
-
-OPTIONS
-  -f, --force
-  -h, --help       show CLI help
-  -n, --name=name  name to print
+  $ aral-vps-test workspace:start [REPOSITORY] [BRANCH] [PROVIDER]
 ```
 
 _See code: [src/commands/workspace/start.ts](https://github.com/11arn11/aral-vps-test/blob/v0.0.0/src/commands/workspace/start.ts)_
