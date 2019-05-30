@@ -1,0 +1,59 @@
+version: '3.5'
+
+networks:
+
+  traefik_net:
+    name: traefik_net
+
+services:
+
+  traefik:
+    container_name: traefik
+    image: traefik
+    restart: always
+    # command: -c /dev/null --docker --web
+    command: -c --web
+    networks:
+      - 'traefik_net'
+    ports:
+      - '80:80'
+      - '443:443'
+      - '8080:8080'  
+    volumes:
+      - '/var/run/docker.sock:/var/run/docker.sock'
+      - '${SYSTEM_CONFIG_FOLDER}/traefik/traefik.toml:/traefik.toml'
+      - '${SYSTEM_CONFIG_FOLDER}/traefik/acme.json:/acme.json'
+
+  portainer:
+    container_name: portainer
+    image: portainer/portainer
+    restart: always
+    networks:
+      - 'traefik_net'
+    volumes:
+      - '/var/run/docker.sock:/var/run/docker.sock'
+      - '${SYSTEM_CONFIG_FOLDER}/portainer:/data'
+    labels:
+      - 'traefik.enable=true'
+      - 'traefik.backend=portainer'
+      - 'traefik.port=9000'
+      - 'traefik.frontend.rule=Host:portainer.${SYSTEM_DOMAIN}'
+      - 'traefik.docker.network=traefik_net'
+    depends_on:
+      - traefik
+
+  webhook:
+    container_name: webhook
+    image: almir/webhook
+    restart: always
+    command: -hotreload -verbose -hooks=/etc/webhook/hooks.json
+    networks:
+      - 'traefik_net'
+    volumes:
+      - '${SYSTEM_CONFIG_FOLDER}/webhook:/etc/webhook'
+    labels:
+      - 'traefik.enable=true'
+      - 'traefik.backend=webhook'
+      - 'traefik.port=9000'
+      - 'traefik.frontend.rule=Host:webhook.${SYSTEM_DOMAIN}'
+      - 'traefik.docker.network=traefik_net'

@@ -1,0 +1,35 @@
+[
+    {
+      "id": "gitlab",
+      "execute-command": "/opt/aral/scripts/aral_workspaces_start.sh",
+      "response-message": "Executing redeploy script",
+      "pass-arguments-to-command": [
+        {
+          "source": "payload",
+          "name": "repository.git_ssh_url"
+        },
+        {
+          "source": "payload",
+          "name": "ref"
+        }
+      ],
+      "include-command-output-in-response": true
+    },
+    {
+      "id": "bitbucket",
+      "execute-command": "/opt/aral/scripts/aral_workspaces_start.sh",
+      "response-message": "Executing redeploy script",
+      "pass-arguments-to-command": [
+        {
+          "source": "payload",
+          "name": "repository.full_name"
+        },
+        {
+          "source": "payload",
+          "name": "push.changes.new.name"
+        }
+      ],
+      "include-command-output-in-response": true
+    }  
+  ]
+  

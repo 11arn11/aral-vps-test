@@ -1,7 +1,9 @@
 import {Command} from '@oclif/command'
 import {IConfig} from '@oclif/config'
+import * as shell from 'shelljs'
 
 import {ProjectModel} from '../../model/project'
+import {SystemModel} from '../../model/system'
 import {WorkspaceModel} from '../../model/workspace'
 
 export default class WorkspaceStart extends Command {
@@ -11,35 +13,30 @@ export default class WorkspaceStart extends Command {
     {name: 'branch'},
     {name: 'provider'}
   ]
-
+  system: SystemModel
   repository: string
-  branch: string
-
   project: ProjectModel
   workspace: WorkspaceModel
-
   constructor(argv: string[], config: IConfig) {
     super(argv, config)
-
     const {args} = this.parse(WorkspaceStart)
-
+    this.system = new SystemModel()
     this.repository = args.repository
-    this.branch = args.branch
-    this.project = new ProjectModel(args.repository)
+    this.project = new ProjectModel(this.system, args.repository)
     this.workspace = new WorkspaceModel(this.project, args.branch)
-
   }
-
   async run() {
-    const {args, flags} = this.parse(WorkspaceStart)
-
-    this.workspace.branch
-
-    const name = flags.name || 'world'
-    this.log(`hello ${name} from /Users/andrea.nigro/VisualStudioCodeProjects/aral-vps-test/src/commands/workspace/start.ts`)
-    if (args.file && flags.force) {
-      this.log(`you input --force and --file: ${args.file}`)
-    }
+    this.log(this.system.env_file)
+    this.log(this.workspace.env_file)
+    this.log(this.workspace.docker_compose)
+    this.log(this.workspace.name)
+    shell.exec([
+      "export $(egrep -v '^#' " + this.system.env_file + ' | xargs)',
+      "export $(egrep -v '^#' " + this.workspace.env_file + ' | xargs)',
+      'export STAGE=' + this.workspace.branch,
+      'export MYSQL_DATABASE=' + this.workspace.name,
+      'docker-compose -f ' + this.workspace.docker_compose + ' config',
+      'docker-compose -f ' + this.workspace.docker_compose + ' -p ' + this.workspace.name + ' up -d'
+    ].join(' && '))
   }
-
 }
