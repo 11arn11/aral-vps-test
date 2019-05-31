@@ -2,7 +2,7 @@
 
 debug = false
 
-logLevel = "ERROR"
+logLevel = "DEBUG"
 defaultEntryPoints = ["http","https"]
 
 [entryPoints]
@@ -31,3 +31,8 @@ onHostRule = true
   [acme.httpChallenge]
   entryPoint = "http"
 
+[traefikLog]
+  filePath = "/var/log/traefik.log"
+
+[accessLog]
+  filePath = "/var/log/access.log"

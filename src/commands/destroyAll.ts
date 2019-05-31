@@ -26,6 +26,5 @@ export default class DestroyAll extends Command {
     ]).run().catch(err => {
       console.error(err)
     })
-
   }
 }

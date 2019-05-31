@@ -11,49 +11,60 @@ services:
     container_name: traefik
     image: traefik
     restart: always
-    # command: -c /dev/null --docker --web
-    command: -c --web
+    command: --docker --api
     networks:
-      - 'traefik_net'
+      - traefik_net
     ports:
       - '80:80'
       - '443:443'
-      - '8080:8080'  
     volumes:
       - '/var/run/docker.sock:/var/run/docker.sock'
       - '${SYSTEM_CONFIG_FOLDER}/traefik/traefik.toml:/traefik.toml'
       - '${SYSTEM_CONFIG_FOLDER}/traefik/acme.json:/acme.json'
+      - '${SYSTEM_LOG_FOLDER}/traefik/traefik.log:/var/log/traefik.log'
+      - '${SYSTEM_LOG_FOLDER}/traefik/access.log:/var/log/access.log'
+    labels:
+      - 'traefik.enable=true'
+      - 'traefik.backend=traefik'
+      - 'traefik.port=8080'
+      - 'traefik.frontend.rule=Host:traefik.${SYSTEM_DOMAIN}'
 
   portainer:
     container_name: portainer
     image: portainer/portainer
     restart: always
     networks:
-      - 'traefik_net'
+      - traefik_net
     volumes:
       - '/var/run/docker.sock:/var/run/docker.sock'
       - '${SYSTEM_CONFIG_FOLDER}/portainer:/data'
+    depends_on:
+      - traefik
     labels:
       - 'traefik.enable=true'
       - 'traefik.backend=portainer'
       - 'traefik.port=9000'
       - 'traefik.frontend.rule=Host:portainer.${SYSTEM_DOMAIN}'
       - 'traefik.docker.network=traefik_net'
-    depends_on:
-      - traefik
 
   webhook:
     container_name: webhook
-    image: almir/webhook
+    image: hoitalia/webhook
     restart: always
-    command: -hotreload -verbose -hooks=/etc/webhook/hooks.json
     networks:
-      - 'traefik_net'
+      - traefik_net
+    command: -hotreload -verbose -hooks=/opt/aral/config/webhook/hooks.json
     volumes:
-      - '${SYSTEM_CONFIG_FOLDER}/webhook:/etc/webhook'
+      - /var/run/docker.sock:/var/run/docker.sock      
+      - '${SYSTEM_CONFIG_FOLDER}:/opt/aral/config'
+      - '${SYSTEM_LOG_FOLDER}:/opt/aral/volumes'
+      - ~/.ssh:/root/.ssh:ro
+    depends_on: 
+      - traefik
     labels:
       - 'traefik.enable=true'
       - 'traefik.backend=webhook'
       - 'traefik.port=9000'
       - 'traefik.frontend.rule=Host:webhook.${SYSTEM_DOMAIN}'
       - 'traefik.docker.network=traefik_net'
+

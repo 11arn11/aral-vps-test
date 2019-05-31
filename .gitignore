@@ -1,4 +1,5 @@
-__*/
+__config/
+__volumes/
 
 *-debug.log
 *-error.log

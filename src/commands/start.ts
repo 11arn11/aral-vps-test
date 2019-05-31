@@ -9,15 +9,16 @@ export default class Start extends Command {
   system: SystemModel
   constructor(argv: string[], config: IConfig) {
     super(argv, config)
-    this.system = new SystemModel()
+    this.system = new SystemModel(this.config.configDir)
   }
   async run() {
     this.log(this.system.env_file)
     shell.exec([
       'export SYSTEM_CONFIG_FOLDER=' + this.system.config_path,
+      'export SYSTEM_LOG_FOLDER=' + this.system.config_path,
       "export $(egrep -v '^#' " + this.system.env_file + ' | xargs)',
-      'docker-compose -f ' + this.system.docker_compose + ' config',
-      'docker-compose -f ' + this.system.docker_compose + ' -p aral_vps up -d'
+      'docker-compose -f ' + this.system.docker_compose_file + ' config',
+      'docker-compose -f ' + this.system.docker_compose_file + ' -p aral_vps up -d'
     ].join(' && '))
   }
 }
