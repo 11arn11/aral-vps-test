@@ -21,8 +21,7 @@ services:
       - '/var/run/docker.sock:/var/run/docker.sock'
       - '${SYSTEM_CONFIG_FOLDER}/traefik/traefik.toml:/traefik.toml'
       - '${SYSTEM_CONFIG_FOLDER}/traefik/acme.json:/acme.json'
-      - '${SYSTEM_LOG_FOLDER}/traefik/traefik.log:/var/log/traefik.log'
-      - '${SYSTEM_LOG_FOLDER}/traefik/access.log:/var/log/access.log'
+      - '${SYSTEM_LOG_FOLDER}/traefik:/var/log'
     labels:
       - 'traefik.enable=true'
       - 'traefik.backend=traefik'

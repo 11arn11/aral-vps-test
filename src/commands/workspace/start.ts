@@ -19,7 +19,7 @@ export default class WorkspaceStart extends Command {
   workspace: WorkspaceModel
   constructor(argv: string[], config: IConfig) {
     super(argv, config)
-    this.system = new SystemModel(this.config.configDir)
+    this.system = new SystemModel()
     const {args} = this.parse(WorkspaceStart)
     this.repository = args.repository
     this.project = new ProjectModel(this.system, args.repository)

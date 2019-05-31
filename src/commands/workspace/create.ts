@@ -21,7 +21,7 @@ export default class WorkspaceCreate extends Command {
   workspace: WorkspaceModel
   constructor(argv: string[], config: IConfig) {
     super(argv, config)
-    this.system = new SystemModel(this.config.configDir)
+    this.system = new SystemModel()
     const {args} = this.parse(WorkspaceCreate)
     this.repository = args.repository
     this.project = new ProjectModel(this.system, args.repository)
