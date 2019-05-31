@@ -19,7 +19,7 @@ $ npm install -g aral-vps-test
 $ aral-vps-test COMMAND
 running command...
 $ aral-vps-test (-v|--version|version)
-aral-vps-test/0.0.1 darwin-x64 node-v8.11.4
+aral-vps-test/0.0.2 darwin-x64 node-v8.11.4
 $ aral-vps-test --help [COMMAND]
 USAGE
   $ aral-vps-test COMMAND
@@ -34,7 +34,7 @@ USAGE
 * [`aral-vps-test start`](#aral-vps-test-start)
 * [`aral-vps-test workspace:create [REPOSITORY] [BRANCH] [PROVIDER]`](#aral-vps-test-workspacecreate-repository-branch-provider)
 * [`aral-vps-test workspace:start [REPOSITORY] [BRANCH] [PROVIDER]`](#aral-vps-test-workspacestart-repository-branch-provider)
-* [`aral-vps-test workspace:update [FILE]`](#aral-vps-test-workspaceupdate-file)
+* [`aral-vps-test workspace:update [REPOSITORY] [BRANCH] [PROVIDER]`](#aral-vps-test-workspaceupdate-repository-branch-provider)
 
 ## `aral-vps-test destroyAll`
 
@@ -43,7 +43,7 @@ USAGE
   $ aral-vps-test destroyAll
 ```
 
-_See code: [src/commands/destroyAll.ts](https://github.com/11arn11/aral-vps-test/blob/v0.0.1/src/commands/destroyAll.ts)_
+_See code: [src/commands/destroyAll.ts](https://github.com/11arn11/aral-vps-test/blob/v0.0.2/src/commands/destroyAll.ts)_
 
 ## `aral-vps-test help [COMMAND]`
 
@@ -71,7 +71,7 @@ USAGE
   $ aral-vps-test init
 ```
 
-_See code: [src/commands/init.ts](https://github.com/11arn11/aral-vps-test/blob/v0.0.1/src/commands/init.ts)_
+_See code: [src/commands/init.ts](https://github.com/11arn11/aral-vps-test/blob/v0.0.2/src/commands/init.ts)_
 
 ## `aral-vps-test start`
 
@@ -82,7 +82,7 @@ USAGE
   $ aral-vps-test start
 ```
 
-_See code: [src/commands/start.ts](https://github.com/11arn11/aral-vps-test/blob/v0.0.1/src/commands/start.ts)_
+_See code: [src/commands/start.ts](https://github.com/11arn11/aral-vps-test/blob/v0.0.2/src/commands/start.ts)_
 
 ## `aral-vps-test workspace:create [REPOSITORY] [BRANCH] [PROVIDER]`
 
@@ -93,7 +93,7 @@ USAGE
   $ aral-vps-test workspace:create [REPOSITORY] [BRANCH] [PROVIDER]
 ```
 
-_See code: [src/commands/workspace/create.ts](https://github.com/11arn11/aral-vps-test/blob/v0.0.1/src/commands/workspace/create.ts)_
+_See code: [src/commands/workspace/create.ts](https://github.com/11arn11/aral-vps-test/blob/v0.0.2/src/commands/workspace/create.ts)_
 
 ## `aral-vps-test workspace:start [REPOSITORY] [BRANCH] [PROVIDER]`
 
@@ -104,21 +104,16 @@ USAGE
   $ aral-vps-test workspace:start [REPOSITORY] [BRANCH] [PROVIDER]
 ```
 
-_See code: [src/commands/workspace/start.ts](https://github.com/11arn11/aral-vps-test/blob/v0.0.1/src/commands/workspace/start.ts)_
+_See code: [src/commands/workspace/start.ts](https://github.com/11arn11/aral-vps-test/blob/v0.0.2/src/commands/workspace/start.ts)_
 
-## `aral-vps-test workspace:update [FILE]`
+## `aral-vps-test workspace:update [REPOSITORY] [BRANCH] [PROVIDER]`
 
 describe the command here
 
 ```
 USAGE
-  $ aral-vps-test workspace:update [FILE]
-
-OPTIONS
-  -f, --force
-  -h, --help       show CLI help
-  -n, --name=name  name to print
+  $ aral-vps-test workspace:update [REPOSITORY] [BRANCH] [PROVIDER]
 ```
 
-_See code: [src/commands/workspace/update.ts](https://github.com/11arn11/aral-vps-test/blob/v0.0.1/src/commands/workspace/update.ts)_
+_See code: [src/commands/workspace/update.ts](https://github.com/11arn11/aral-vps-test/blob/v0.0.2/src/commands/workspace/update.ts)_
 <!-- commandsstop -->
