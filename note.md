@@ -7,7 +7,8 @@
 3. loggarsi come "aral"
 >   - `su aral`
 
-4. creare chiave pubblica dell'utente "aral": 
+4. configurare utente "aral" per accettare connessioni ssh con chiave pubblica: 
+>   - `[aggiungerlo nel file /etc/ssh/sshd_config]`
 >   - `ssh-keygen`
 
 5. installa aral-vps-test: 
