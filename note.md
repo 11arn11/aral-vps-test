@@ -1,0 +1,32 @@
+# Setup
+
+1. Installare node e npm
+
+2. creare un utente non sudoer "aral"
+
+3. loggarsi come "aral"
+>   - `su aral`
+
+4. creare chiave pubblica dell'utente "aral": 
+>   - `ssh-keygen`
+
+5. installa aral-vps-test: 
+>   - `npm i -g aral-vps-test`
+
+6. inizializza aral: 
+>   - `aral init`
+
+7. Configurare i permessi del file dei certificati di Traefik (devi essere un sudoer): 
+>   - `su [utente_sudoer]`
+>   - `sudo chmod 600 acme.json && chown root acme.json`
+
+8. Avvia aral (devi essere utente "aral")
+>   - `su aral`
+>   - `aral start`
+
+9. Configurare accesso di "webhook verso host"
+>   - `docker exec -ti webhook sh`
+>   - `ssh-copy-id -p 2552 aral@{HOST_OS_IP}`
+
+# Utilizzo di aral dal container "webhook"
+> `ssh -p 2552 aral@${HOST_OS_IP} aral`

@@ -54,10 +54,10 @@ services:
       - traefik_net
     command: -hotreload -verbose -hooks=/opt/aral/config/webhook/hooks.json
     volumes:
-      - /var/run/docker.sock:/var/run/docker.sock      
+      # - /var/run/docker.sock:/var/run/docker.sock      
       - '${SYSTEM_CONFIG_FOLDER}:/opt/aral/config'
       - '${SYSTEM_LOG_FOLDER}:/opt/aral/volumes'
-      - ~/.ssh:/root/.ssh:ro
+      - ~/.ssh:/root/.ssh
     depends_on: 
       - traefik
     labels:
@@ -66,4 +66,6 @@ services:
       - 'traefik.port=9000'
       - 'traefik.frontend.rule=Host:webhook.${SYSTEM_DOMAIN}'
       - 'traefik.docker.network=traefik_net'
+    environment:
+      - HOST_OS_IP=${HOST_OS_IP}
 

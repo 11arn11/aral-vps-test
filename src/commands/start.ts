@@ -19,8 +19,10 @@ export default class Start extends Command {
     this.log(this.system.docker_compose_file)
     shell.exec([
       'export SYSTEM_CONFIG_FOLDER=' + this.system.config_path,
+      'export SYSTEM_VOLUME_FOLDER=' + this.system.volumes_path,
       'export SYSTEM_LOG_FOLDER=' + this.system.logs_path,
       'export SYSTEM_DOMAIN=' + this.system.domain,
+      "export HOST_OS_IP=$(ifconfig | grep -E \"([0-9]{1,3}\.){3}[0-9]{1,3}\" | grep -v 127.0.0.1 | awk '{ print $2 }' | cut -f2 -d: | head -n1)",
       "export $(egrep -v '^#' " + this.system.env_file + ' | xargs)',
       'docker-compose -f ' + this.system.docker_compose_file + ' config',
       'docker-compose -f ' + this.system.docker_compose_file + ' -p aral_vps up -d'

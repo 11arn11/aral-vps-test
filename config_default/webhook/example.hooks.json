@@ -27,6 +27,10 @@
         {
           "source": "payload",
           "name": "push.changes.new.name"
+        },
+        {
+          "source": "string",
+          "name": "bitbucket"
         }
       ],
       "include-command-output-in-response": true
