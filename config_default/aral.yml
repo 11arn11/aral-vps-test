@@ -52,11 +52,11 @@ services:
     restart: always
     networks:
       - traefik_net
-    command: -hotreload -verbose -hooks=/opt/aral/config/webhook/hooks.json
+    command: -hotreload -verbose -hooks=/webhook/hooks.json
     volumes:
       # - /var/run/docker.sock:/var/run/docker.sock      
-      - '${SYSTEM_CONFIG_FOLDER}:/opt/aral/config'
-      - '${SYSTEM_LOG_FOLDER}:/opt/aral/volumes'
+      # - '${SYSTEM_LOG_FOLDER}:/opt/aral/volumes'
+      - '${SYSTEM_CONFIG_FOLDER}/webhook:/webhook'
       - ~/.ssh:/root/.ssh
     depends_on: 
       - traefik

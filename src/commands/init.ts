@@ -44,21 +44,16 @@ export default class Init extends Command {
     fse.ensureDirSync(this.system.config_path)
     this.log('config folder: ' + this.system.config_path)
 
-    const default_env_file = path.join(this.system.root_app_dir, 'config_default', 'aral.env')
-    fse.copyFileSync(default_env_file, this.system.env_file)
+    const default_config_folder = path.join(this.system.root_app_dir, 'config_default')
+    fse.copySync(default_config_folder, this.system.config_path)
+
     this.log('creato: ' + this.system.env_file)
 
-    const default_docker_compose_file = path.join(this.system.root_app_dir, 'config_default', 'aral.yml')
-    fse.copyFileSync(default_docker_compose_file, this.system.docker_compose_file)
     this.log('creato: ' + this.system.docker_compose_file)
 
-    fse.ensureFileSync(this.system.traefik_acme_file)
     this.log('creato: ' + this.system.traefik_acme_file)
-    fse.chmodSync(this.system.traefik_acme_file, 600)
-    this.log('permessi 600 per ' + this.system.traefik_acme_file)
+    this.log('ricordati di impostare i permessi di ' + this.system.traefik_acme_file)
 
-    const default_traefik_config_file = path.join(this.system.root_app_dir, 'config_default', 'traefik', 'traefik.toml')
-    fse.copyFileSync(default_traefik_config_file, this.system.traefik_config_file)
     this.log('creato: ' + this.system.traefik_config_file)
 
   }

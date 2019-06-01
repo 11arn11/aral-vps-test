@@ -9,7 +9,7 @@
 
 4. configurare utente "aral" per accettare connessioni ssh con chiave pubblica: 
 >   - `[aggiungerlo nel file /etc/ssh/sshd_config]`
->   - `ssh-keygen`
+>   - `ssh-keygen -t rsa -N "" -f ~/.ssh/id_rsa`
 
 5. installa aral-vps-test: 
 >   - `npm i -g aral-vps-test`
@@ -25,7 +25,7 @@
 >   - `su aral`
 >   - `aral start`
 
-9. Configurare accesso di "webhook verso host"
+9. Configurare accesso di "webhook" verso "docker host"
 >   - `docker exec -ti webhook sh`
 >   - `ssh-copy-id -p 2552 aral@{HOST_OS_IP}`
 

@@ -1,9 +1,13 @@
 [
     {
       "id": "gitlab",
-      "execute-command": "/opt/aral/scripts/aral_workspaces_start.sh",
-      "response-message": "Executing redeploy script",
+      "execute-command": "sh",
+      "response-message": "Executing GitLab deploy script",
       "pass-arguments-to-command": [
+        {
+          "source": "string",
+          "name": "/webhook/proxy.sh"
+        },
         {
           "source": "payload",
           "name": "repository.git_ssh_url"
@@ -11,22 +15,30 @@
         {
           "source": "payload",
           "name": "ref"
+        },
+        {
+          "source": "string",
+          "name": "gitlab"
         }
       ],
       "include-command-output-in-response": true
     },
     {
       "id": "bitbucket",
-      "execute-command": "/opt/aral/scripts/aral_workspaces_start.sh",
-      "response-message": "Executing redeploy script",
+      "execute-command": "sh",
+      "response-message": "Executing BitBucket deploy script",
       "pass-arguments-to-command": [
+        {
+          "source": "string",
+          "name": "/webhook/proxy.sh"
+        },
         {
           "source": "payload",
           "name": "repository.full_name"
         },
         {
           "source": "payload",
-          "name": "push.changes.new.name"
+          "name": "push.changes.0.old.name"
         },
         {
           "source": "string",
