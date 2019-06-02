@@ -43,6 +43,19 @@ export default class WorkspaceUpdate extends Command {
           this.workspace.git,
           'pull'
         ].join(' '))
+      },
+      {
+        title: 'Checkout branch ' + this.workspace.branch,
+        enabled: () => fse.pathExistsSync(this.workspace.git),
+        task: () => execa.shell([
+          'git',
+          '--git-dir',
+          this.workspace.git,
+          '--work-tree',
+          this.workspace.folder,
+          'checkout',
+          '--force'
+        ].join(' '))
       }
     ]).run().catch(err => {
       console.error(err)

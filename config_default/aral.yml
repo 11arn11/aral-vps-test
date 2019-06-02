@@ -66,6 +66,3 @@ services:
       - 'traefik.port=9000'
       - 'traefik.frontend.rule=Host:webhook.${SYSTEM_DOMAIN}'
       - 'traefik.docker.network=traefik_net'
-    environment:
-      - HOST_OS_IP=${HOST_OS_IP}
-
