@@ -41,11 +41,11 @@ export class SystemModel {
       //
       this.domain = config.system_domain
       this.config_path = config.system_config_path
+      this.volumes_path = config.system_volumes_path
       this.env_file = path.join(this.config_path, 'aral.env')
       this.docker_compose_file = path.join(this.config_path, 'aral.yml')
       this.traefik_acme_file = path.join(this.config_path, 'traefik', 'acme.json')
       this.traefik_config_file = path.join(this.config_path, 'traefik', 'traefik.toml')
-      this.volumes_path = path.join(this.config_path, 'volumes')
       this.logs_path = path.join(this.config_path, 'logs')
       //
       this.data_path = config.data_path

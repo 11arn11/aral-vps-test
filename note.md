@@ -27,7 +27,7 @@
 
 9. Configurare accesso di "webhook" verso "docker host"
 >   - `docker exec -ti webhook sh`
->   - `ssh-copy-id -p 2552 aral@{HOST_OS_IP}`
+>   - `ssh-copy-id -p 2552 aral@$(ip route show default | awk '/default/ {print $3}')`
 
 # Utilizzo di aral dal container "webhook"
-> `ssh -p 2552 aral@${HOST_OS_IP} aral`
+> `ssh -p 2552 aral@$(ip route show default | awk '/default/ {print $3}') aral`

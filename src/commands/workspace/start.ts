@@ -39,6 +39,8 @@ export default class WorkspaceStart extends Command {
       this.system.domain
     ].join('')
 
+    shell.exec('chgrp -R 33 ' + this.workspace.folder)
+
     shell.exec([
       "export $(egrep -v '^#' " + this.system.env_file + ' | xargs)',
       "export $(egrep -v '^#' " + this.workspace.env_file + ' | xargs)',

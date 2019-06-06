@@ -13,7 +13,7 @@ export class WorkspaceModel {
   constructor(project: ProjectModel, branch: string) {
     this.project = project
     this.branch = branch
-    this.name = path.join(this.project.client, this.project.name, this.branch).replace(new RegExp(path.sep, 'g'), '_')
+    this.name = path.join(this.project.client, this.project.name, this.branch).replace(new RegExp(path.sep, 'g'), '__')
     this.folder = path.join(this.project.folder, this.branch)
     this.git = path.join(this.folder, '.git')
     this.docker_compose = path.join(this.folder, 'aral.test.yml')
