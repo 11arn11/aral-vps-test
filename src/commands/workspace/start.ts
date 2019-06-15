@@ -33,7 +33,7 @@ export default class WorkspaceStart extends Command {
 
     const workspace_web_name = [
       this.workspace.branch,
-      '-',
+      '.',
       this.project.name,
       '.',
       this.system.domain

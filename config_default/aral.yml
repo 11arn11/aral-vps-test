@@ -9,9 +9,36 @@ services:
 
   traefik:
     container_name: traefik
+    # image: traefik:<stable version from https://hub.docker.com/_/traefik>
     image: traefik
     restart: always
-    command: --docker --api
+    command:
+      - "--debug=false"
+      - "--logLevel=info"
+      - "--defaultentrypoints=http,https"
+      - "--entrypoints=Name:http Address::80 Redirect.EntryPoint:https"
+      - "--entrypoints=Name:https Address::443 TLS"
+
+      - "--traefikLog.filePath=/var/log/traefik.log"
+      - "--accessLog.filePath=/var/log/access.log"
+
+
+      - "--docker"
+      - "--docker.endpoint=unix:///var/run/docker.sock"
+      # - "--docker.domain=mydomain.ca"
+      - "--docker.watch"
+      - "--docker.exposedByDefault=false"
+
+      - "--acme"
+      - "--acme.email=webmaster@ogilvy.it"
+      - "--acme.storage=/acme.json"
+      - "--acme.entryPoint=https"
+      - "--acme.onDemand=false"
+      - "--acme.onHostRule=true"
+      - "--acme.httpChallenge.entryPoint=http"
+
+      - "--api"
+
     networks:
       - traefik_net
     ports:
@@ -19,7 +46,7 @@ services:
       - '443:443'
     volumes:
       - '/var/run/docker.sock:/var/run/docker.sock'
-      - '${SYSTEM_CONFIG_FOLDER}/traefik/traefik.toml:/traefik.toml'
+    #  - '${SYSTEM_CONFIG_FOLDER}/traefik/traefik.toml:/traefik.toml'
       - '${SYSTEM_CONFIG_FOLDER}/traefik/acme.json:/acme.json'
       - '${SYSTEM_LOG_FOLDER}/traefik:/var/log'
     labels:
