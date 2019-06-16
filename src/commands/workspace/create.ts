@@ -28,10 +28,12 @@ export default class WorkspaceCreate extends Command {
     this.workspace = new WorkspaceModel(this.project, args.branch)
   }
   async run() {
+    const {args} = this.parse(WorkspaceCreate)
     this.log(this.workspace.folder)
     this.log(this.project.repository_url)
     this.log(this.workspace.branch)
     fse.ensureDirSync(this.workspace.folder)
+
     new Listr([
       {
         title: 'Create folder: ' + this.workspace.folder,
@@ -50,9 +52,16 @@ export default class WorkspaceCreate extends Command {
           '--single-branch',
           this.workspace.folder
         ].join(' '))
+      },
+      {
+        title: 'Add to workspace list',
+        task: () => {
+          this.system.workspace_list_add(args.repository, args.branch, args.provider)
+        }
       }
     ]).run().catch(err => {
       console.error(err)
     })
+
   }
 }

@@ -15,12 +15,14 @@ export class SystemModel {
   docker_compose_file: string
   traefik_acme_file: string
   traefik_config_file: string
+  workspace_list_file: string
   constructor() {
     this.root_app_dir = require('app-root-path').path
 
     this.base_config_path = path.join(os.homedir(), 'aral-vps-test')
 
     this.config_file = path.join(this.base_config_path, 'config.json')
+    this.workspace_list_file = path.join(this.base_config_path, 'workspace.json')
 
     this.config_path = ''
     this.env_file = ''
@@ -50,6 +52,23 @@ export class SystemModel {
       //
       this.data_path = config.data_path
     }
+  }
+  workspace_list_add(repository: string, branch: string, provider: string) {
+    fse.ensureDirSync(path.dirname(this.workspace_list_file))
 
+    if (!fse.pathExistsSync(this.workspace_list_file)) {
+      fse.writeJSONSync(this.workspace_list_file, {})
+    }
+
+    const workspace_list = this.workspace_list_load()
+
+    const workspace_entry = [repository, branch, provider].join(' ')
+
+    workspace_list[workspace_entry] = new Date().toISOString()
+
+    fse.writeFileSync(this.workspace_list_file, JSON.stringify(workspace_list, null, 4))
+  }
+  workspace_list_load() {
+    return fse.readJSONSync(this.workspace_list_file)
   }
 }

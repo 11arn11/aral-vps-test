@@ -726,8 +726,8 @@
         "signature": "18609e55de22295d8a888d6409fe658d6baa89c5d4fe073651dbdc599519c915"
       },
       "/users/andrea.nigro/visualstudiocodeprojects/aral-vps-test/src/model/system.ts": {
-        "version": "d9e2388c5ca855a04b6d097d28e92585d6a4488272417fb0a894bddd042cd2a4",
-        "signature": "5337ef10251d8cab0949e92c9bfcbc2e5bf4ffad052f7d47d8b44710b1b9b0b1"
+        "version": "edd2b65678d379d472720108f9b6c387d62949908d31e27477ac166fa0e2021c",
+        "signature": "a0df72426fdfd61b64156df6f3162c23ceea16b7c109a6fc59ac20e4c59b87ec"
       },
       "/users/andrea.nigro/visualstudiocodeprojects/aral-vps-test/src/commands/init.ts": {
         "version": "18c6d7eefc1026ca8db0b5043db55b031dbfd822f8488a32ef1e8cdba1155a6e",
@@ -762,12 +762,20 @@
         "signature": "18d340e915300cb52ed2d46ad03e381901ad39f1b87f610bb2a55bbe3e3196a4"
       },
       "/users/andrea.nigro/visualstudiocodeprojects/aral-vps-test/src/commands/workspace/create.ts": {
-        "version": "f8e577407980e95cc478f2bdb1bda4a55af4cfebbde489a79e9567a81065a39b",
+        "version": "7875ad47054d993b7d68bb6017e0678559e024bc6c2f484ff66de00e1cb04098",
         "signature": "06915296826331a193242ed07668de83395b0a3a77a5d1c8b164c9a2a68fb7d7"
+      },
+      "/users/andrea.nigro/visualstudiocodeprojects/aral-vps-test/src/commands/workspace/list.ts": {
+        "version": "de7465c2b8026c6a1c9a972bba5155b5f12a19beaffa364a4bf676455712d36c",
+        "signature": "9e07643bbb4cd8b23b43a3d025917e15f8ff25a906047cfa6a01288d45db19f4"
       },
       "/users/andrea.nigro/visualstudiocodeprojects/aral-vps-test/src/commands/workspace/start.ts": {
         "version": "2d8b600a21ac7f37ee2af5543688de697f3869d034d0dcb1de4da41b37aad9b5",
         "signature": "0cfc4cf0cf4c819ade861f832d270111ac8f089e4d59c6ae58cbe64cc2282ca9"
+      },
+      "/users/andrea.nigro/visualstudiocodeprojects/aral-vps-test/src/commands/workspace/startall.ts": {
+        "version": "191a4e6cd9b1077900094d7bd1a2615a9a77d5fb234273850c725fcce41fab32",
+        "signature": "d443058b7e4259fbcbe86f47b6559ad6ca15cf0bf061e90fd39a96c2c328ee84"
       },
       "/users/andrea.nigro/visualstudiocodeprojects/aral-vps-test/src/commands/workspace/update.ts": {
         "version": "ecc833e935c92e03a92adb8c84d1e35a42888d8ece8f4923d5e54d5de23bf01b",
@@ -1999,6 +2007,13 @@
         "/users/andrea.nigro/visualstudiocodeprojects/aral-vps-test/node_modules/@types/node/util.d.ts",
         "/users/andrea.nigro/visualstudiocodeprojects/aral-vps-test/node_modules/@types/node/ts3.2/util.d.ts"
       ],
+      "/users/andrea.nigro/visualstudiocodeprojects/aral-vps-test/src/commands/workspace/list.ts": [
+        "/users/andrea.nigro/visualstudiocodeprojects/aral-vps-test/node_modules/@oclif/command/lib/index.d.ts",
+        "/users/andrea.nigro/visualstudiocodeprojects/aral-vps-test/node_modules/@oclif/config/lib/index.d.ts",
+        "/users/andrea.nigro/visualstudiocodeprojects/aral-vps-test/src/model/system.ts",
+        "/users/andrea.nigro/visualstudiocodeprojects/aral-vps-test/node_modules/@types/node/util.d.ts",
+        "/users/andrea.nigro/visualstudiocodeprojects/aral-vps-test/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
       "/users/andrea.nigro/visualstudiocodeprojects/aral-vps-test/src/commands/workspace/start.ts": [
         "/users/andrea.nigro/visualstudiocodeprojects/aral-vps-test/node_modules/@oclif/command/lib/index.d.ts",
         "/users/andrea.nigro/visualstudiocodeprojects/aral-vps-test/node_modules/@oclif/config/lib/index.d.ts",
@@ -2006,6 +2021,14 @@
         "/users/andrea.nigro/visualstudiocodeprojects/aral-vps-test/src/model/project.ts",
         "/users/andrea.nigro/visualstudiocodeprojects/aral-vps-test/src/model/system.ts",
         "/users/andrea.nigro/visualstudiocodeprojects/aral-vps-test/src/model/workspace.ts",
+        "/users/andrea.nigro/visualstudiocodeprojects/aral-vps-test/node_modules/@types/node/util.d.ts",
+        "/users/andrea.nigro/visualstudiocodeprojects/aral-vps-test/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/andrea.nigro/visualstudiocodeprojects/aral-vps-test/src/commands/workspace/startall.ts": [
+        "/users/andrea.nigro/visualstudiocodeprojects/aral-vps-test/node_modules/@oclif/command/lib/index.d.ts",
+        "/users/andrea.nigro/visualstudiocodeprojects/aral-vps-test/node_modules/@oclif/config/lib/index.d.ts",
+        "/users/andrea.nigro/visualstudiocodeprojects/aral-vps-test/node_modules/@types/shelljs/index.d.ts",
+        "/users/andrea.nigro/visualstudiocodeprojects/aral-vps-test/src/model/system.ts",
         "/users/andrea.nigro/visualstudiocodeprojects/aral-vps-test/node_modules/@types/node/util.d.ts",
         "/users/andrea.nigro/visualstudiocodeprojects/aral-vps-test/node_modules/@types/node/ts3.2/util.d.ts"
       ],
@@ -2412,10 +2435,20 @@
         "/users/andrea.nigro/visualstudiocodeprojects/aral-vps-test/node_modules/@oclif/config/lib/index.d.ts",
         "/users/andrea.nigro/visualstudiocodeprojects/aral-vps-test/node_modules/@oclif/command/lib/index.d.ts"
       ],
+      "/users/andrea.nigro/visualstudiocodeprojects/aral-vps-test/src/commands/workspace/startall.ts": [
+        "/users/andrea.nigro/visualstudiocodeprojects/aral-vps-test/src/model/system.ts",
+        "/users/andrea.nigro/visualstudiocodeprojects/aral-vps-test/node_modules/@oclif/config/lib/index.d.ts",
+        "/users/andrea.nigro/visualstudiocodeprojects/aral-vps-test/node_modules/@oclif/command/lib/index.d.ts"
+      ],
       "/users/andrea.nigro/visualstudiocodeprojects/aral-vps-test/src/commands/workspace/start.ts": [
         "/users/andrea.nigro/visualstudiocodeprojects/aral-vps-test/src/model/system.ts",
         "/users/andrea.nigro/visualstudiocodeprojects/aral-vps-test/src/model/project.ts",
         "/users/andrea.nigro/visualstudiocodeprojects/aral-vps-test/src/model/workspace.ts",
+        "/users/andrea.nigro/visualstudiocodeprojects/aral-vps-test/node_modules/@oclif/config/lib/index.d.ts",
+        "/users/andrea.nigro/visualstudiocodeprojects/aral-vps-test/node_modules/@oclif/command/lib/index.d.ts"
+      ],
+      "/users/andrea.nigro/visualstudiocodeprojects/aral-vps-test/src/commands/workspace/list.ts": [
+        "/users/andrea.nigro/visualstudiocodeprojects/aral-vps-test/src/model/system.ts",
         "/users/andrea.nigro/visualstudiocodeprojects/aral-vps-test/node_modules/@oclif/config/lib/index.d.ts",
         "/users/andrea.nigro/visualstudiocodeprojects/aral-vps-test/node_modules/@oclif/command/lib/index.d.ts"
       ],
@@ -3798,7 +3831,9 @@
       "/users/andrea.nigro/visualstudiocodeprojects/aral-vps-test/src/model/project.ts",
       "/users/andrea.nigro/visualstudiocodeprojects/aral-vps-test/src/model/workspace.ts",
       "/users/andrea.nigro/visualstudiocodeprojects/aral-vps-test/src/commands/workspace/create.ts",
+      "/users/andrea.nigro/visualstudiocodeprojects/aral-vps-test/src/commands/workspace/list.ts",
       "/users/andrea.nigro/visualstudiocodeprojects/aral-vps-test/src/commands/workspace/start.ts",
+      "/users/andrea.nigro/visualstudiocodeprojects/aral-vps-test/src/commands/workspace/startall.ts",
       "/users/andrea.nigro/visualstudiocodeprojects/aral-vps-test/src/commands/workspace/update.ts",
       "/users/andrea.nigro/visualstudiocodeprojects/aral-vps-test/node_modules/@types/chai/index.d.ts",
       "/users/andrea.nigro/visualstudiocodeprojects/aral-vps-test/node_modules/@types/lodash/ts3.1/common/common.d.ts",
