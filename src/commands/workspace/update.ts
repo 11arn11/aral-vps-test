@@ -41,6 +41,8 @@ export default class WorkspaceUpdate extends Command {
           'git',
           '--git-dir',
           this.workspace.git,
+          '--work-tree',
+          this.workspace.folder,
           'pull'
         ].join(' '))
       },

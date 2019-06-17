@@ -1,6 +1,6 @@
 {
   "name": "aral-vps-test",
-  "version": "0.0.53",
+  "version": "0.0.57",
   "author": "Andrea R. Nigro @11arn11",
   "bin": {
     "aral": "./bin/run"

@@ -31,13 +31,13 @@ export default class WorkspaceStart extends Command {
     this.log(this.workspace.docker_compose)
     this.log(this.workspace.name)
 
-    const workspace_web_name = [
+    const workspace_base_url = [
       this.workspace.branch,
       '.',
       this.project.name,
       '.',
       this.system.domain
-    ].join('')
+    ].join('').replace(new RegExp('_', 'g'), '-')
 
     shell.exec('chgrp -R 33 ' + this.workspace.folder)
 
@@ -45,7 +45,7 @@ export default class WorkspaceStart extends Command {
       "export $(egrep -v '^#' " + this.system.env_file + ' | xargs)',
       "export $(egrep -v '^#' " + this.workspace.env_file + ' | xargs)',
       'export WORKSPACE_NAME=' + this.workspace.name,
-      'export WORKSPACE_WEB_NAME=' + workspace_web_name,
+      'export WORKSPACE_BASE_URL=' + workspace_base_url,
       'export STAGE=' + this.workspace.branch,
       'export MYSQL_DATABASE=' + this.workspace.name,
       'docker-compose -f ' + this.workspace.docker_compose + ' config',

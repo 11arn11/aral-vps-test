@@ -770,7 +770,7 @@
         "signature": "9e07643bbb4cd8b23b43a3d025917e15f8ff25a906047cfa6a01288d45db19f4"
       },
       "/users/andrea.nigro/visualstudiocodeprojects/aral-vps-test/src/commands/workspace/start.ts": {
-        "version": "2d8b600a21ac7f37ee2af5543688de697f3869d034d0dcb1de4da41b37aad9b5",
+        "version": "761541a88961ff2f5bdd024c7ef13b1bcbe6ad79dfe202922f0cad79cc1e4760",
         "signature": "0cfc4cf0cf4c819ade861f832d270111ac8f089e4d59c6ae58cbe64cc2282ca9"
       },
       "/users/andrea.nigro/visualstudiocodeprojects/aral-vps-test/src/commands/workspace/startall.ts": {
@@ -778,7 +778,7 @@
         "signature": "d443058b7e4259fbcbe86f47b6559ad6ca15cf0bf061e90fd39a96c2c328ee84"
       },
       "/users/andrea.nigro/visualstudiocodeprojects/aral-vps-test/src/commands/workspace/update.ts": {
-        "version": "ecc833e935c92e03a92adb8c84d1e35a42888d8ece8f4923d5e54d5de23bf01b",
+        "version": "69d169ba2e96095e3e4dc2dbb92b0ce51dab2616fea8d2c07df82cefbe071e91",
         "signature": "0b7a23b6ac066229c933abe2f63a2e12baefcb0c8b20c6f7221716c5883d132b"
       },
       "/users/andrea.nigro/visualstudiocodeprojects/aral-vps-test/node_modules/@types/chai/index.d.ts": {
