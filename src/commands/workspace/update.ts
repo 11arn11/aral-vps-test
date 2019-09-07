@@ -9,7 +9,7 @@ import {SystemModel} from '../../model/system'
 import {WorkspaceModel} from '../../model/workspace'
 
 export default class WorkspaceUpdate extends Command {
-  static description = 'describe the command here'
+  static description = 'update workspace filesystem'
   static args = [
     {name: 'repository'},
     {name: 'branch'},

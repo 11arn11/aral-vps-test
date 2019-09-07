@@ -1,6 +1,6 @@
 {
   "name": "aral-vps-test",
-  "version": "0.0.58",
+  "version": "1.0.2",
   "author": "11arn11",
   "bin": {
     "aral": "./bin/run"
@@ -59,7 +59,7 @@
   "main": "lib/index.js",
   "oclif": {
     "commands": "./lib/commands",
-    "bin": "aral-vps-test",
+    "bin": "aral",
     "plugins": [
       "@oclif/plugin-help"
     ]

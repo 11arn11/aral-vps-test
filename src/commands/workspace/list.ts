@@ -4,7 +4,7 @@ import {IConfig} from '@oclif/config'
 import {SystemModel} from '../../model/system'
 
 export default class WorkspaceList extends Command {
-  static description = 'describe the command here'
+  static description = 'list all created workspace (started or not)'
   system: SystemModel
   constructor(argv: string[], config: IConfig) {
     super(argv, config)

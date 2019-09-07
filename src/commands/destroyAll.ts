@@ -3,6 +3,7 @@ import execa = require('execa')
 import Listr = require('listr')
 
 export default class DestroyAll extends Command {
+  static description = 'remove all system container. After this command you will have to set authorized_keys of Webhook container again'
   async run() {
     new Listr([
       {

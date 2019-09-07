@@ -5,7 +5,7 @@ import * as shell from 'shelljs'
 import {SystemModel} from '../model/system'
 
 export default class Start extends Command {
-  static description = 'describe the command here'
+  static description = 'start the system'
   system: SystemModel
   constructor(argv: string[], config: IConfig) {
     super(argv, config)

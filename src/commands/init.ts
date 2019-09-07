@@ -7,7 +7,7 @@ import * as path from 'path'
 import {SystemModel} from '../model/system'
 
 export default class Init extends Command {
-  static description = 'describe the command here'
+  static description = 'start configuration wizard'
   system: SystemModel
   constructor(argv: string[], config: IConfig) {
     super(argv, config)

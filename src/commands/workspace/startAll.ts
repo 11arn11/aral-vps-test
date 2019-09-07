@@ -6,7 +6,7 @@ import Listr = require('listr')
 import {SystemModel} from '../../model/system'
 
 export default class WorkspaceStartAll extends Command {
-  static description = 'describe the command here'
+  static description = 'start (or restart) all workspace created'
   system: SystemModel
   constructor(argv: string[], config: IConfig) {
     super(argv, config)
