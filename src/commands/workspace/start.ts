@@ -43,10 +43,11 @@ export default class WorkspaceStart extends Command {
 
     shell.exec([
       "export $(egrep -v '^#' " + this.system.env_file + ' | xargs)',
+      "export $(egrep -v '^#' " + this.workspace.env_default_file + ' | xargs)',
       "export $(egrep -v '^#' " + this.workspace.env_file + ' | xargs)',
+      'export STAGE=' + this.workspace.branch,
       'export WORKSPACE_NAME=' + this.workspace.name,
       'export WORKSPACE_BASE_URL=' + workspace_base_url,
-      'export STAGE=' + this.workspace.branch,
       'export WORKSPACE_RELATIVE_FOLDER=' + this.workspace.relative_folder,
       'export MYSQL_DATABASE=' + this.workspace.name,
       'docker-compose -f ' + this.workspace.docker_compose + ' config',

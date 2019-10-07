@@ -10,6 +10,7 @@ export class WorkspaceModel {
   folder: string
   git: string
   docker_compose: string
+  env_default_file: string
   env_file: string
   constructor(project: ProjectModel, branch: string) {
     this.project = project
@@ -19,6 +20,7 @@ export class WorkspaceModel {
     this.folder = path.join(this.project.folder, this.branch)
     this.git = path.join(this.folder, '.git')
     this.docker_compose = path.join(this.folder, 'aral.test.yml')
+    this.env_default_file = path.join(this.folder, 'aral.env')
     this.env_file = path.join(this.folder, '.env')
   }
 }
