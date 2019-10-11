@@ -10,7 +10,7 @@ services:
   traefik:
     container_name: traefik
     # image: traefik:<stable version from https://hub.docker.com/_/traefik>
-    image: traefik
+    image: traefik:v1.7-alpine
     restart: always
     command:
       - "--debug=false"
