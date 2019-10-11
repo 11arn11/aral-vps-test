@@ -11,3 +11,5 @@ __volumes/
 /tmp
 /yarn.lock
 node_modules
+
+/tsconfig.tsbuildinfo
