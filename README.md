@@ -19,7 +19,7 @@ $ npm install -g aral-vps-test
 $ aral COMMAND
 running command...
 $ aral (-v|--version|version)
-aral-vps-test/1.0.8 darwin-x64 node-v8.11.4
+aral-vps-test/1.0.9 darwin-x64 node-v8.11.4
 $ aral --help [COMMAND]
 USAGE
   $ aral COMMAND
@@ -32,11 +32,11 @@ USAGE
 * [`aral help [COMMAND]`](#aral-help-command)
 * [`aral init`](#aral-init)
 * [`aral start`](#aral-start)
-* [`aral workspace:create [REPOSITORY] [BRANCH] [PROVIDER]`](#aral-workspacecreate-repository-branch-provider)
+* [`aral workspace:create REPOSITORY BRANCH [PROVIDER]`](#aral-workspacecreate-repository-branch-provider)
 * [`aral workspace:list`](#aral-workspacelist)
-* [`aral workspace:start [REPOSITORY] [BRANCH] [PROVIDER]`](#aral-workspacestart-repository-branch-provider)
+* [`aral workspace:start REPOSITORY BRANCH [PROVIDER]`](#aral-workspacestart-repository-branch-provider)
 * [`aral workspace:startAll`](#aral-workspacestartall)
-* [`aral workspace:update [REPOSITORY] [BRANCH] [PROVIDER]`](#aral-workspaceupdate-repository-branch-provider)
+* [`aral workspace:update REPOSITORY BRANCH [PROVIDER]`](#aral-workspaceupdate-repository-branch-provider)
 
 ## `aral destroyAll`
 
@@ -47,7 +47,7 @@ USAGE
   $ aral destroyAll
 ```
 
-_See code: [src/commands/destroyAll.ts](https://github.com/11arn11/aral-vps-test/blob/v1.0.8/src/commands/destroyAll.ts)_
+_See code: [src/commands/destroyAll.ts](https://github.com/11arn11/aral-vps-test/blob/v1.0.9/src/commands/destroyAll.ts)_
 
 ## `aral help [COMMAND]`
 
@@ -75,7 +75,7 @@ USAGE
   $ aral init
 ```
 
-_See code: [src/commands/init.ts](https://github.com/11arn11/aral-vps-test/blob/v1.0.8/src/commands/init.ts)_
+_See code: [src/commands/init.ts](https://github.com/11arn11/aral-vps-test/blob/v1.0.9/src/commands/init.ts)_
 
 ## `aral start`
 
@@ -86,18 +86,18 @@ USAGE
   $ aral start
 ```
 
-_See code: [src/commands/start.ts](https://github.com/11arn11/aral-vps-test/blob/v1.0.8/src/commands/start.ts)_
+_See code: [src/commands/start.ts](https://github.com/11arn11/aral-vps-test/blob/v1.0.9/src/commands/start.ts)_
 
-## `aral workspace:create [REPOSITORY] [BRANCH] [PROVIDER]`
+## `aral workspace:create REPOSITORY BRANCH [PROVIDER]`
 
 create a branch repository workspace
 
 ```
 USAGE
-  $ aral workspace:create [REPOSITORY] [BRANCH] [PROVIDER]
+  $ aral workspace:create REPOSITORY BRANCH [PROVIDER]
 ```
 
-_See code: [src/commands/workspace/create.ts](https://github.com/11arn11/aral-vps-test/blob/v1.0.8/src/commands/workspace/create.ts)_
+_See code: [src/commands/workspace/create.ts](https://github.com/11arn11/aral-vps-test/blob/v1.0.9/src/commands/workspace/create.ts)_
 
 ## `aral workspace:list`
 
@@ -108,18 +108,18 @@ USAGE
   $ aral workspace:list
 ```
 
-_See code: [src/commands/workspace/list.ts](https://github.com/11arn11/aral-vps-test/blob/v1.0.8/src/commands/workspace/list.ts)_
+_See code: [src/commands/workspace/list.ts](https://github.com/11arn11/aral-vps-test/blob/v1.0.9/src/commands/workspace/list.ts)_
 
-## `aral workspace:start [REPOSITORY] [BRANCH] [PROVIDER]`
+## `aral workspace:start REPOSITORY BRANCH [PROVIDER]`
 
 start a branch repository workspace
 
 ```
 USAGE
-  $ aral workspace:start [REPOSITORY] [BRANCH] [PROVIDER]
+  $ aral workspace:start REPOSITORY BRANCH [PROVIDER]
 ```
 
-_See code: [src/commands/workspace/start.ts](https://github.com/11arn11/aral-vps-test/blob/v1.0.8/src/commands/workspace/start.ts)_
+_See code: [src/commands/workspace/start.ts](https://github.com/11arn11/aral-vps-test/blob/v1.0.9/src/commands/workspace/start.ts)_
 
 ## `aral workspace:startAll`
 
@@ -130,16 +130,16 @@ USAGE
   $ aral workspace:startAll
 ```
 
-_See code: [src/commands/workspace/startAll.ts](https://github.com/11arn11/aral-vps-test/blob/v1.0.8/src/commands/workspace/startAll.ts)_
+_See code: [src/commands/workspace/startAll.ts](https://github.com/11arn11/aral-vps-test/blob/v1.0.9/src/commands/workspace/startAll.ts)_
 
-## `aral workspace:update [REPOSITORY] [BRANCH] [PROVIDER]`
+## `aral workspace:update REPOSITORY BRANCH [PROVIDER]`
 
 update workspace filesystem
 
 ```
 USAGE
-  $ aral workspace:update [REPOSITORY] [BRANCH] [PROVIDER]
+  $ aral workspace:update REPOSITORY BRANCH [PROVIDER]
 ```
 
-_See code: [src/commands/workspace/update.ts](https://github.com/11arn11/aral-vps-test/blob/v1.0.8/src/commands/workspace/update.ts)_
+_See code: [src/commands/workspace/update.ts](https://github.com/11arn11/aral-vps-test/blob/v1.0.9/src/commands/workspace/update.ts)_
 <!-- commandsstop -->
