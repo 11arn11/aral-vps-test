@@ -11,8 +11,8 @@ import {WorkspaceModel} from '../../model/workspace'
 export default class WorkspaceUpdate extends Command {
   static description = 'update workspace filesystem'
   static args = [
-    {name: 'repository'},
-    {name: 'branch'},
+    {name: 'repository', required: true},
+    {name: 'branch', required: true},
     {name: 'provider'}
   ]
   system: SystemModel

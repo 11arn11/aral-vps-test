@@ -9,8 +9,8 @@ import {WorkspaceModel} from '../../model/workspace'
 export default class WorkspaceStart extends Command {
   static description = 'start a branch repository workspace'
   static args = [
-    {name: 'repository'},
-    {name: 'branch'},
+    {name: 'repository', required: true},
+    {name: 'branch', required: true},
     {name: 'provider'}
   ]
   system: SystemModel
