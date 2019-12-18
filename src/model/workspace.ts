@@ -6,6 +6,7 @@ export class WorkspaceModel {
   project: ProjectModel
   branch: string
   name: string
+  namespace: string
   relative_folder: string
   folder: string
   git: string
@@ -16,6 +17,7 @@ export class WorkspaceModel {
     this.project = project
     this.branch = branch
     this.name = path.join(this.project.client, this.project.name, this.branch).replace(new RegExp(path.sep, 'g'), '__')
+    this.namespace = path.join(this.project.client, this.project.name, this.branch).replace(new RegExp(path.sep, 'g'), '.')
     this.relative_folder = path.join(this.project.client, this.project.name, this.branch)
     this.folder = path.join(this.project.folder, this.branch)
     this.git = path.join(this.folder, '.git')

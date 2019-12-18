@@ -17,6 +17,7 @@ export default class WorkspaceStart extends Command {
   repository: string
   project: ProjectModel
   workspace: WorkspaceModel
+
   constructor(argv: string[], config: IConfig) {
     super(argv, config)
     this.system = new SystemModel()
@@ -25,6 +26,7 @@ export default class WorkspaceStart extends Command {
     this.project = new ProjectModel(this.system, args.repository)
     this.workspace = new WorkspaceModel(this.project, args.branch)
   }
+
   async run() {
     this.log(this.system.env_file)
     this.log(this.workspace.env_file)
@@ -47,6 +49,7 @@ export default class WorkspaceStart extends Command {
       "export $(egrep -v '^#' " + this.workspace.env_file + ' | xargs)',
       'export STAGE=' + this.workspace.branch,
       'export WORKSPACE_NAME=' + this.workspace.name,
+      'export WORKSPACE_NAMESPACE=' + this.workspace.namespace,
       'export WORKSPACE_BASE_URL=' + workspace_base_url,
       'export WORKSPACE_RELATIVE_FOLDER=' + this.workspace.relative_folder,
       'export MYSQL_DATABASE=' + this.workspace.name,
