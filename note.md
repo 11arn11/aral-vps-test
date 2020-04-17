@@ -1,6 +1,6 @@
 # Setup
 
-1. Installare node e npm
+1. Installare node e npm. Docker e Docker-compose
 
 2. creare un utente non sudoer "aral"
 
