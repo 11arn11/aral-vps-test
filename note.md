@@ -1,24 +1,24 @@
 # Setup
 
-1. Installare node e npm. Docker e Docker-compose
+1. Installare node e npm
 
-2. creare un utente non sudoer "aral"
+2. Installare 
+    - Docker
+    - Docker-compose (>= 1.24.0)
 
-3. loggarsi come "aral"
->   - `su aral`
+3. Controllare che le porte 80 e 443 non siano utilizzate da un processo
 
-4. configurare utente "aral" per accettare connessioni ssh con chiave pubblica: 
+4. installa aral-vps-test: 
+>   - `npm i -g aral-vps-test`
+
+5. creare un utente non sudoer "aral"
+
+6. configurare utente "aral" per accettare connessioni ssh con chiave pubblica: 
 >   - `[aggiungerlo nel file /etc/ssh/sshd_config]`
 >   - `ssh-keygen -t rsa -N "" -f ~/.ssh/id_rsa`
 
-5. installa aral-vps-test: 
->   - `mkdir ~/.npm-global`
->   - `npm config set prefix '~/.npm-global'`
->   - `nano ~/.profile`
->   - dentro profile aggiungere `export PATH=~/.npm-global/bin:$PATH`
->   - `source ~/.profile`
->   - `npm i -g aral-vps-test`
-
+7. loggarsi come "aral"
+>   - `su aral`
 
 1. inizializza aral: 
 >   - `aral init`
