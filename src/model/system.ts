@@ -17,7 +17,7 @@ export class SystemModel {
   traefik_config_file: string
   workspace_list_file: string
   constructor() {
-    this.root_app_dir = require('app-root-path').toString()
+    this.root_app_dir = path.resolve(__dirname)
 
     this.base_config_path = path.join(os.homedir(), 'aral-vps-test')
 
