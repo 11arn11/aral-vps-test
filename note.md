@@ -1,6 +1,6 @@
 # Setup
 
-1. Installare node e npm
+1. Installare node e npm. Docker e Docker-compose
 
 2. creare un utente non sudoer "aral"
 
@@ -12,9 +12,15 @@
 >   - `ssh-keygen -t rsa -N "" -f ~/.ssh/id_rsa`
 
 5. installa aral-vps-test: 
+>   - `mkdir ~/.npm-global`
+>   - `npm config set prefix '~/.npm-global'`
+>   - `nano ~/.profile`
+>   - dentro profile aggiungere `export PATH=~/.npm-global/bin:$PATH`
+>   - `source ~/.profile`
 >   - `npm i -g aral-vps-test`
 
-6. inizializza aral: 
+
+1. inizializza aral: 
 >   - `aral init`
 
 7. Configurare i permessi del file dei certificati di Traefik (devi essere un sudoer): 
