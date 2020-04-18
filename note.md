@@ -13,6 +13,7 @@
 
 5. installa aral-vps-test: 
 >   - `npm i -g aral-vps-test`
+
 > NOTE: While installing global packages in ubuntu, you need special write permissions as you are writing to the usr/bin folder. It is for security reasons. So, everytime you install a global package, use:
 > sudo npm install -g [package-name]
 
