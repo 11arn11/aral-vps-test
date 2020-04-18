@@ -48,7 +48,7 @@ export default class Init extends Command {
     this.log('system.config_path: ' + this.system.config_path)
 
     const default_config_folder = path.join(this.system.root_app_dir, 'config_default')
-    this.log('default_config_folder: ' + this.system.config_path)
+    this.log('default_config_folder: ' + default_config_folder)
     fse.copySync(default_config_folder, this.system.config_path)
 
     this.log('creato: ' + this.system.env_file)
