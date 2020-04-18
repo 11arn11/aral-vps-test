@@ -31,16 +31,19 @@ export default class Init extends Command {
       default: 'localhost'
     })
 
-    this.log('cerco (e nel caso creo) la cartella : ' + this.system.base_config_path)
-    fse.ensureDirSync(this.system.base_config_path)
-
-    this.log('creo il file: ' + this.system.config_file)
-    await fse.writeJson(this.system.config_file, {
+    const temp = {
       system_config_path,
       system_volumes_path,
       system_logs_path,
       system_domain
-    })
+    }
+    this.debug(temp)
+
+    this.log('cerco (e nel caso creo) la cartella : ' + this.system.base_config_path)
+    fse.ensureDirSync(this.system.base_config_path)
+
+    this.log('creo il file: ' + this.system.config_file)
+    await fse.writeJson(this.system.config_file, temp)
 
     this.system.load_config()
 
