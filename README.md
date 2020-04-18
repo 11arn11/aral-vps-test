@@ -19,7 +19,7 @@ $ npm install -g aral-vps-test
 $ aral COMMAND
 running command...
 $ aral (-v|--version|version)
-aral-vps-test/1.0.16 darwin-x64 node-v12.16.1
+aral-vps-test/1.0.17 darwin-x64 node-v12.16.1
 $ aral --help [COMMAND]
 USAGE
   $ aral COMMAND
@@ -47,7 +47,7 @@ USAGE
   $ aral destroyAll
 ```
 
-_See code: [src/commands/destroyAll.ts](https://github.com/11arn11/aral-vps-test/blob/v1.0.16/src/commands/destroyAll.ts)_
+_See code: [src/commands/destroyAll.ts](https://github.com/11arn11/aral-vps-test/blob/v1.0.17/src/commands/destroyAll.ts)_
 
 ## `aral help [COMMAND]`
 
@@ -75,7 +75,7 @@ USAGE
   $ aral init
 ```
 
-_See code: [src/commands/init.ts](https://github.com/11arn11/aral-vps-test/blob/v1.0.16/src/commands/init.ts)_
+_See code: [src/commands/init.ts](https://github.com/11arn11/aral-vps-test/blob/v1.0.17/src/commands/init.ts)_
 
 ## `aral start`
 
@@ -86,7 +86,7 @@ USAGE
   $ aral start
 ```
 
-_See code: [src/commands/start.ts](https://github.com/11arn11/aral-vps-test/blob/v1.0.16/src/commands/start.ts)_
+_See code: [src/commands/start.ts](https://github.com/11arn11/aral-vps-test/blob/v1.0.17/src/commands/start.ts)_
 
 ## `aral workspace:create REPOSITORY BRANCH [PROVIDER]`
 
@@ -97,7 +97,7 @@ USAGE
   $ aral workspace:create REPOSITORY BRANCH [PROVIDER]
 ```
 
-_See code: [src/commands/workspace/create.ts](https://github.com/11arn11/aral-vps-test/blob/v1.0.16/src/commands/workspace/create.ts)_
+_See code: [src/commands/workspace/create.ts](https://github.com/11arn11/aral-vps-test/blob/v1.0.17/src/commands/workspace/create.ts)_
 
 ## `aral workspace:list`
 
@@ -108,7 +108,7 @@ USAGE
   $ aral workspace:list
 ```
 
-_See code: [src/commands/workspace/list.ts](https://github.com/11arn11/aral-vps-test/blob/v1.0.16/src/commands/workspace/list.ts)_
+_See code: [src/commands/workspace/list.ts](https://github.com/11arn11/aral-vps-test/blob/v1.0.17/src/commands/workspace/list.ts)_
 
 ## `aral workspace:start REPOSITORY BRANCH [PROVIDER]`
 
@@ -119,7 +119,7 @@ USAGE
   $ aral workspace:start REPOSITORY BRANCH [PROVIDER]
 ```
 
-_See code: [src/commands/workspace/start.ts](https://github.com/11arn11/aral-vps-test/blob/v1.0.16/src/commands/workspace/start.ts)_
+_See code: [src/commands/workspace/start.ts](https://github.com/11arn11/aral-vps-test/blob/v1.0.17/src/commands/workspace/start.ts)_
 
 ## `aral workspace:startAll`
 
@@ -130,7 +130,7 @@ USAGE
   $ aral workspace:startAll
 ```
 
-_See code: [src/commands/workspace/startAll.ts](https://github.com/11arn11/aral-vps-test/blob/v1.0.16/src/commands/workspace/startAll.ts)_
+_See code: [src/commands/workspace/startAll.ts](https://github.com/11arn11/aral-vps-test/blob/v1.0.17/src/commands/workspace/startAll.ts)_
 
 ## `aral workspace:update REPOSITORY BRANCH [PROVIDER]`
 
@@ -141,5 +141,5 @@ USAGE
   $ aral workspace:update REPOSITORY BRANCH [PROVIDER]
 ```
 
-_See code: [src/commands/workspace/update.ts](https://github.com/11arn11/aral-vps-test/blob/v1.0.16/src/commands/workspace/update.ts)_
+_See code: [src/commands/workspace/update.ts](https://github.com/11arn11/aral-vps-test/blob/v1.0.17/src/commands/workspace/update.ts)_
 <!-- commandsstop -->
