@@ -61,4 +61,5 @@ export default class Init extends Command {
     this.log('creato: ' + this.system.traefik_config_file)
 
   }
+
 }
