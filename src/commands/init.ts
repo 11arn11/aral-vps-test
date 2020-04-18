@@ -31,7 +31,10 @@ export default class Init extends Command {
       default: 'localhost'
     })
 
+    this.log('cerco (e nel caso creo) la cartella : ' + this.system.base_config_path)
     fse.ensureDirSync(this.system.base_config_path)
+
+    this.log('creo il file: ' + this.system.config_file)
     await fse.writeJson(this.system.config_file, {
       system_config_path,
       system_volumes_path,
@@ -42,9 +45,10 @@ export default class Init extends Command {
     this.system.load_config()
 
     fse.ensureDirSync(this.system.config_path)
-    this.log('config folder: ' + this.system.config_path)
+    this.log('system.config_path: ' + this.system.config_path)
 
     const default_config_folder = path.join(this.system.root_app_dir, 'config_default')
+    this.log('default_config_folder: ' + this.system.config_path)
     fse.copySync(default_config_folder, this.system.config_path)
 
     this.log('creato: ' + this.system.env_file)
