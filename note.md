@@ -12,12 +12,15 @@
 >   - `ssh-keygen -t rsa -N "" -f ~/.ssh/id_rsa`
 
 5. installa aral-vps-test: 
+>   - `mkdir ~/.npm-global`
+>   - `npm config set prefix '~/.npm-global'`
+>   - `nano ~/.profile`
+>   - dentro profile aggiungere `export PATH=~/.npm-global/bin:$PATH`
+>   - `source ~/.profile`
 >   - `npm i -g aral-vps-test`
 
-> NOTE: While installing global packages in ubuntu, you need special write permissions as you are writing to the usr/bin folder. It is for security reasons. So, everytime you install a global package, use:
-> sudo npm install -g [package-name]
 
-6. inizializza aral: 
+1. inizializza aral: 
 >   - `aral init`
 
 7. Configurare i permessi del file dei certificati di Traefik (devi essere un sudoer): 
