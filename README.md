@@ -19,7 +19,7 @@ $ npm install -g aral-vps-test
 $ aral COMMAND
 running command...
 $ aral (-v|--version|version)
-aral-vps-test/1.0.29 darwin-x64 node-v12.16.1
+aral-vps-test/1.0.30 darwin-x64 node-v12.16.1
 $ aral --help [COMMAND]
 USAGE
   $ aral COMMAND
@@ -28,15 +28,18 @@ USAGE
 <!-- usagestop -->
 # Commands
 <!-- commands -->
-* [`aral destroyAll`](#aral-destroyall)
-* [`aral help [COMMAND]`](#aral-help-command)
-* [`aral init`](#aral-init)
-* [`aral start`](#aral-start)
-* [`aral workspace:create REPOSITORY BRANCH [PROVIDER]`](#aral-workspacecreate-repository-branch-provider)
-* [`aral workspace:list`](#aral-workspacelist)
-* [`aral workspace:start REPOSITORY BRANCH [PROVIDER]`](#aral-workspacestart-repository-branch-provider)
-* [`aral workspace:startAll`](#aral-workspacestartall)
-* [`aral workspace:update REPOSITORY BRANCH [PROVIDER]`](#aral-workspaceupdate-repository-branch-provider)
+- [aral-vps-test](#aral-vps-test)
+- [Usage](#usage)
+- [Commands](#commands)
+  - [`aral destroyAll`](#aral-destroyall)
+  - [`aral help [COMMAND]`](#aral-help-command)
+  - [`aral init`](#aral-init)
+  - [`aral start`](#aral-start)
+  - [`aral workspace:create REPOSITORY BRANCH [PROVIDER]`](#aral-workspacecreate-repository-branch-provider)
+  - [`aral workspace:list`](#aral-workspacelist)
+  - [`aral workspace:start REPOSITORY BRANCH [PROVIDER]`](#aral-workspacestart-repository-branch-provider)
+  - [`aral workspace:startAll`](#aral-workspacestartall)
+  - [`aral workspace:update REPOSITORY BRANCH [PROVIDER]`](#aral-workspaceupdate-repository-branch-provider)
 
 ## `aral destroyAll`
 
