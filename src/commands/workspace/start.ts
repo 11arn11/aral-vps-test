@@ -39,7 +39,7 @@ export default class WorkspaceStart extends Command {
       this.project.name,
       '.',
       this.system.domain
-    ].join('').replace(new RegExp('_', 'g'), '-')
+    ].join('').replace(new RegExp('_/', 'g'), '-')
 
     shell.exec('chgrp -R 33 ' + this.workspace.folder)
 
@@ -47,7 +47,7 @@ export default class WorkspaceStart extends Command {
       "export $(egrep -v '^#' " + this.system.env_file + ' | xargs)',
       "export $(egrep -v '^#' " + this.workspace.env_default_file + ' | xargs)',
       "export $(egrep -v '^#' " + this.workspace.env_file + ' | xargs)',
-      'export STAGE=' + this.workspace.branch,
+      'export STAGE=' + this.workspace.branch.replace(new RegExp('_/', 'g'), '-'),
       'export WORKSPACE_NAME=' + this.workspace.name,
       'export WORKSPACE_NAMESPACE=' + this.workspace.namespace,
       'export WORKSPACE_BASE_URL=' + workspace_base_url,
