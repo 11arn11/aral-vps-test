@@ -19,7 +19,7 @@ $ npm install -g aral-vps-test
 $ aral COMMAND
 running command...
 $ aral (-v|--version|version)
-aral-vps-test/1.0.33 darwin-x64 node-v16.3.0
+aral-vps-test/1.0.33 darwin-x64 node-v14.16.0
 $ aral --help [COMMAND]
 USAGE
   $ aral COMMAND
